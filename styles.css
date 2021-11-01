@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Raleway;
+  src: url("Raleway-VariableFont_wght.ttf");
+}
+
 *{
   font-family: Raleway;
 }
@@ -10,19 +15,30 @@
     font-family: Raleway;        
 }
 
+h1{
+  font-size: 50px;
+  text-align: center;
+}
+
+section h2{
+  font-size: 40px;
+  margin-bottom: 10%;
+}
+
 .middle {
     height: 100vh;    
 }
 
-.middle p, h1 {
+.middle p{
     font-family: Raleway;
-    text-align: center;
+    text-align: justify;
     font-weight: 400;
     font-style: normal;
-    font-size: 15px;
+    font-size: 30px;
     letter-spacing: .4px;
     line-height: 1.6em;
     color: rgba(0,0,0,.5);
+    padding: 0px 40px;
 }
 
 .middle h1{
@@ -34,16 +50,33 @@
     text-transform: uppercase;
 }
 
-
 hgroup{
     text-align: center;
     color: rgb(117, 107, 107);
     text-shadow: 1px 1px 0px #ebe7e2;
 }
 
-@font-face {
-    font-family: Raleway;
-    src: url("Raleway-VariableFont_wght.ttf");
+/*Animacion de todos los elementos p*/
+p {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  50% {    
+    margin-left: 50%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .welcome{
@@ -109,6 +142,7 @@ iframe{
     text-shadow: 1px 1px 0px #ebe7e2;
     text-align: center;    
 }
+
 a{
     text-decoration: none;
     color: white;  
@@ -148,38 +182,38 @@ a:hover{
     
 }
 
-
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0px;
     overflow: hidden;
     background: rgba(224, 196, 142, 0.25);;    
-  }
+}
   
-  li {
+li {
     float: left;    
-  }
+}
   
-  li a {
+li a {
     display: block;
     color:rgb(233, 230, 223);
     font-size:20px;
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
-  }
-  .active{
-  background-color: gray;
-  color: white;
-  }
-  li a:hover {
+}
+
+.active {
+    background-color: gray;
+    color: white;
+}
+
+li a:hover {
     background-color: rgb(194, 160, 97);
     color: white;
-  }
+}
 
-.site-footer
-{
+.site-footer {
   width: 100%;
   background-color:#26272b;
   padding:45px 0 20px;
@@ -196,8 +230,8 @@ nav ul {
 }
 
 .rows{
-  width: 400px;  /* Or whatever */
-  height: 200px; /* Or whatever */
+  width: 500px;  
+  height: 200px; 
   margin: auto;      
 }
 
@@ -276,24 +310,7 @@ nav ul {
 {
   margin:0
 }
-@media (max-width:991px)
-{
-  .site-footer [class^=col-]
-  {
-    margin-bottom:30px
-  }
-}
-@media (max-width:767px)
-{
-  .site-footer
-  {
-    padding-bottom:0
-  }
-  .site-footer .copyright-text,.site-footer .social-icons
-  {
-    text-align:center
-  }
-}
+
 .social-icons
 {
   padding-left:0;
@@ -356,8 +373,26 @@ nav ul {
 {
   background-color:#ea4c89
 }
+
+
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
 @media (max-width:767px)
 {
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+
   .social-icons li.title
   {
     display:block;
@@ -366,9 +401,33 @@ nav ul {
   }
 }
 
+@media all and (min-width: 600px) {
+  .navigation {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255,0.3); 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+  }
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
 
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+  .navigation {
+    justify-content: space-around;
+  }
+}
 
-/*Semantic style*/
 body{
   margin:0;
 }
@@ -405,19 +464,6 @@ body{
   background: hotpink;
 }
 
-@media all and (min-width: 600px) {
-  .aside { flex: 1 0 0; }
-}
-
-@media all and (min-width: 800px) {
-  .main    { flex: 3 0px; }
-  .aside-1 { order: 1; } 
-  .main    { order: 2; }
-  .aside-2 { order: 3; }
-  .footer  { order: 4; }
-}
-
-/*Pagina1*/
 .navigation {
   display: flex;
   flex-flow: row wrap;
@@ -438,29 +484,6 @@ body{
   text-decoration: none;
 }
 
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}
-
-@media all and (max-width: 600px) {
-  .navigation {
-    flex-flow: column wrap;
-    padding: 0;
-  }
-  .navigation a { 
-    text-align: center; 
-    padding: 10px;
-    border-top: 1px solid rgba(255, 255, 255,0.3); 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
-  }
-  .navigation li:last-of-type a {
-    border-bottom: none;
-  }
-}
-
-/*pagina 2*/
 .servicios{
   display: flex;
   flex-flow: row wrap;
